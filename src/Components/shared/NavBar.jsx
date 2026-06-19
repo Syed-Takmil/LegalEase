@@ -22,7 +22,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const path=usePathname();
   const links=<>
-<NavLink href={'/'} >Home</NavLink>
+<NavLink href={'/'}  >Home</NavLink>
   <NavLink href={'/browse'}>  Browse Lawyers</NavLink>
   <NavLink href={'/dashboard'}>DashBoard</NavLink>
   </>
@@ -31,13 +31,13 @@ export default function Navbar() {
   
    
   <Link href={'/'}
-   className={`flex gap-2 p-1 justify-items-center items-center  ${(path=='/')?'bg-default bg-base-300 p-2 text-blue-400    rounded-xl  hover:bg-default' : 'hover:bg-default'}`} > <House/> Home</Link>
+   className={`flex gap-2 rounded-xl p-2 justify-items-center items-center  ${(path=='/')?'bg-default bg-base-300  text-orange-500     hover:bg-default' : 'hover:text-orange-500'}`} > <House/> Home</Link>
   <Link href={'/browse'}
-   className={`flex gap-2 p-1 justify-items-center items-center ${(path=='/browse')?' bg-default bg-base-300 p-2   rounded-xl  hover:bg-default' : 'hover:bg-default'}`} >  
+   className={`flex rounded-xl gap-2 p-2 justify-items-center items-center ${(path=='/browse')?'  bg-base-300 p-2    text-orange-500' : 'hover:text-orange-300 hover:bg-base-300'}`} >  
    <PlanetEarth/>
    Browse Lawyers</Link>
   <Link href={'/dashboard'}
-   className={`flex gap-2 p-1 justify-items-center items-center ${(path=='/dashboard')?'bg-default bg-base-300 p-2   rounded-xl  hover:bg-default' : 'hover:bg-default'}`} ><Dice4/> DashBoard</Link>
+   className={`flex rounded-xl gap-2 p-2 justify-items-center items-center ${(path=='/dashboard')?'text-orange-500 bg-base-300 p-2   rounded-xl h' : 'hover:text-orange-300 hover:bg-base-300 '}`} ><Dice4/> DashBoard</Link>
   </>
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -53,14 +53,14 @@ export default function Navbar() {
 
   return (
     // Explicit min-h-screen enforces consistent structural heights
-    <div className="drawer min-h-screen">
+    <div className="drawer min-h-screen mx-auto w-full  ">
       <input id="navbar-drawer" type="checkbox" className="drawer-toggle" /> 
       
       {/* The main scroll window containing navbar, page content, and footer */}
-      <div className="drawer-content flex flex-col min-h-screen bg-base-100">
+      <div className="drawer-content flex flex-col w-full min-h-screen bg-base-100">
         
         {/* --- MAIN NAVBAR CONTROLLER --- */}
-        <div className="navbar bg-base-900 text-neutral-content sticky top-0 z-40 shadow-md px-4 sm:px-8 w-full">
+        <div className="navbar   border-neutral-900 bg-[#0a0a0a]  text-neutral-content sticky top-0 z-40 shadow-md p-0 md:px-4 lg:px-8 w-full ">
           
           {/* --- NAVBAR START: Hamburger + Logo --- */}
           <div className="navbar-start lg:w-1/4">
@@ -124,8 +124,8 @@ export default function Navbar() {
             </div>
 <div className='hidden lg:block h-6 border border-white'></div>
 <div className='flex gap-3'>
-  <button className='text-blue-500'>Sign In</button>
-  <button className='btn btn-primary rounded-3xl'>Get Started</button>
+  <button className='text-orange-500'>Sign In</button>
+  <button className='btn bg-orange-400 rounded-3xl'>Get Started</button>
 </div>
             {/* Dynamic Auth Action CTA */}
             {/* {isLoggedIn ? (
