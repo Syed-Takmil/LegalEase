@@ -132,7 +132,7 @@ const Footer = () => {
           <p>
             Copyright © {new Date().getFullYear()} - All rights reserved.
           </p>
-          <p>Made with ❤️ by <span className='text-md'>Syed Takmil</span>
+          <p className='text-sm'>Made with ❤️ by <span className='text-md'>Syed Takmil</span>
           </p>
           <p className="tracking-tight">
             Designed for secure professional legal matchmaking.
