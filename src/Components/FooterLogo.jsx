@@ -1,20 +1,17 @@
-
-
-
+import { ScalesUnbalanced } from '@gravity-ui/icons';
 import React from 'react';
-import {   ScalesUnbalanced } from '@gravity-ui/icons';
 
-export default function Logo() {
-  return (
-    <div className="flex items-center gap-2 select-none group cursor-pointer">
+const FooterLogo = () => {
+    return (
+        <div className="flex items-center gap-2 select-none group cursor-pointer">
       {/* Gravity UI Icon Container */}
       <div className="">
         {/* Gravity icons accept standard SVG sizing props */}
-        <ScalesUnbalanced width={20} height={20} />
+        <ScalesUnbalanced width={60} height={60} />
       </div>
       
       {/* Brand Text Alignment */}
-      <div className="flex items-baseline text-xl md:text-2xl font-bold tracking-tight">
+      <div className="flex items-baseline text-5xl md:text-6xl font-bold tracking-tight">
         <span className="font-serif text-slate-900 dark:text-slate-100">
           Legal
         </span>
@@ -23,5 +20,7 @@ export default function Logo() {
         </span>
       </div>
     </div>
-  );
-}
+    );
+};
+
+export default FooterLogo;
