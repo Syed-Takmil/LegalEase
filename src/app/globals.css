@@ -23,3 +23,12 @@ body::-webkit-scrollbar {
     display: none !important; /* Chrome, Safari and Opera */
   }
 }
+@keyframes border-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 1s linear infinite;
+}

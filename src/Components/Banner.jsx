@@ -10,14 +10,32 @@ export default function Banner() {
       <div className="carousel w-full h-[450px] sm:h-130 rounded-2xl shadow-2xl overflow-hidden">
         
         {/* --- SLIDE 1: Corporate & Business Law --- */}
-        <div id="slide1" className="carousel-item relative w-full h-full">
+      <div id="slide1" className="carousel-item relative w-full h-full">
           {/* Background image overlay using crisp modern legal workspace visuals */}
           <div 
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: 'url("/slide1.png")' }}
-          >          </div>
-          
-          {/* Arrow Navigation Links tied directly to individual slide IDs */}
+            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200")' }}
+          >
+            {/* Dark glassmorphic gradient overlay ensures your white text pops effortlessly */}
+            <div className="absolute inset-0 bg-gradient-to-r from-base-900/90 via-base-900/60 to-transparent flex items-center p-8 sm:p-16">
+              <div className="max-w-lg space-y-4">
+                <span className="badge badge-primary font-semibold tracking-wide uppercase px-3 py-1 text-xs">
+            Find Hire Resolve 
+                </span>
+
+                <p className="text-white text-3xl font-bold leading-relaxed">
+                   Find & Hire Expert  <span className='text-blue-600'>Legal</span>  Counsel
+                   <br />
+                   Justice is <span className='text-blue-600'>now</span> Within reach
+                </p>
+                <div className="pt-2">
+                  <Link href="/browse" className="btn btn-primary text-white rounded-lg px-6 font-medium shadow-md">
+                    Browse Lawyers
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide3" className="btn btn-circle btn-sm bg-base-900/40 text-white border-none hover:bg-primary transition">❮</a> 
             <a href="#slide2" className="btn btn-circle btn-sm bg-base-900/40 text-white border-none hover:bg-primary transition">❯</a>

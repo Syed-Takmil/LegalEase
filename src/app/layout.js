@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Components/shared/NavBar";
+import Footer from "@/Components/shared/Footer";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +25,13 @@ export default function RootLayout({ children }) {
       lang="en" data-theme="dark"
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className=" overflow-y-auto no-scrollbar  flex flex-col">{children}</body>
+      <body className=" overflow-y-auto no-scrollbar  flex flex-col">
+        <Navbar/>
+        {children}
+        
+        <Footer/>
+        <ToastContainer/>
+        </body>
     </html>
   );
 }

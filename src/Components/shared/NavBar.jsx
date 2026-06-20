@@ -15,9 +15,13 @@ import {
 import Logo from '../Logo';
 import NavLink from './NavLink';
 import { usePathname } from 'next/navigation';
+import { authClient } from '@/app/lib/auth-client';
 
 // 1. ADD CHILDREN HERE so your homepage content/banner hooks inside the container
-export default function Navbar({ children }) {
+export default function Navbar() {
+   const {data:session,isPending}=authClient.useSession();
+      const user = session?.user;
+      console.log(user)
   const path = usePathname();
   
   const links = (
@@ -61,10 +65,10 @@ export default function Navbar({ children }) {
   };
 
   return (
-    <div className="drawer mx-auto w-full min-h-screen">
+    <div className="drawer mx-auto w-full">
       <input id="navbar-drawer" type="checkbox" className="drawer-toggle" /> 
       
-      <div className="drawer-content flex flex-col w-full min-h-screen bg-base-100">
+      <div className="drawer-content flex flex-col w-full  bg-base-100">
         
         {/* --- MAIN NAVBAR CONTROLLER --- */}
         <div className="navbar border-neutral-900 bg-[#0a0a0a] text-neutral-content sticky top-0 z-40 shadow-md p-0 md:px-4 lg:px-8 w-full">
@@ -99,17 +103,11 @@ export default function Navbar({ children }) {
             </div>
             <div className='hidden lg:block h-6 border border-neutral-700'></div>
             <div className='flex gap-3 px-2 sm:px-0'>
-              <button className='text-orange-500 font-medium text-sm'>Sign In</button>
-              <button className='btn btn-sm sm:btn-md bg-orange-400 border-none text-black rounded-3xl hover:bg-orange-500'>Get Started</button>
+             <Link href={'/login'}> <button className='text-orange-500 font-medium text-sm'>Sign In</button></Link>
+             <Link href={"/register"}> <button className='btn btn-sm sm:btn-md bg-orange-400 border-none text-black rounded-3xl hover:bg-orange-500'>Get Started</button></Link>
             </div>
           </div>
         </div>
-
-        {/* 2. THE MAGICAL CONTENT GAP FIXER */}
-        {/* Your banner component now lives inside here cleanly right against the navbar menu line */}
-        <main className="flex-grow w-full">
-          {children}
-        </main>
 
       </div> 
 

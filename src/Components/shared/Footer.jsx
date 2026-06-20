@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col gap-3 items-center lg:ml-25  text-center sm:text-left">
+          <div className="flex flex-col gap-3  lg:ml-25  text-left">
  
             <nav className="flex flex-col gap-2 text-sm">
               <a href="#about" className="hover:text-orange-400 transition-colors">About Us</a>
